@@ -3,7 +3,6 @@
 # This code, or code derived from this code, may not be shared without permission.
 
 import sys, pygame, math 
-#this is a test
 
 # This function loads a series of sprite images stored in a folder with a
 # consistent naming pattern: sprite_# or sprite_##. It returns a list of the images.
