@@ -234,12 +234,22 @@ def main():
                              
                              
         # Only draw the gold if it hasn't been picked up
-        if "gold" not in inventory:
-            screen.blit(treasure, treasure_rect)
+       if "rock" not in inventory:
+           screen.blit(rock, rock_rect)
+           pygame.draw.rect(screen, (40, 60, 0) rock_rect, 3)    
+                             
+       if "spear" not in inventory:
+           screen.blit(spear, spear_rect)
+           pygame.draw.rect(screen, (90, 90, 30) spear_rect, 3)                   
 
-        if "sword" not in inventory:
-            screen.blit(sword, sword_rect)
-
+       if "glasses" not in inventory:
+            screen.blit(glasses, glasses_rect)
+            pygame.draw.rect(screen, (0, 60, 0) glasses_rect, 3)   
+                             
+       if "bag" not in inventory:
+            screen.blit(bag, bag_rect)
+            pygame.draw.rect(screen, (75, 80, 100) bag_rect, 3)   
+                             
         # Pick the sprite frame to draw
         player_sprite = player[frame_count%len(player)]
         # Flip the sprite depending on direction
