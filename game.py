@@ -143,29 +143,19 @@ def main():
 
         # Check for touching boar.
         if player_rect.colliderect(boar_rect):
-            # Respond differently depending on gold status
-            if "gold" in inventory and "sword" in inventory:
-                dialog = "GO Manny!"
-            elif "gold" in inventory:
-                dialog = "Welcome rich friend!"
-            elif "sword" in inventory:
-                dialog = "Oh no. don't hurt me!"
+            # Respond differently depending on spear status
+            if "spear" in inventory:
+                dialog = "Oh no !! you killed me!!"
             else:
-                dialog = "Go away loser!"
+                dialog = "I'm going to kill you!"
             # These say where and for how long the dialog prints on the screen
             dialog_counter = 50
             dialog_position = (100, 100)
 
         # Check for touching spear .
-        if hero_rect.colliderect(treasure_rect) and "gold" not in inventory:
-            inventory["gold"] = True
-            dialog = "Gold added to inventory"
-            dialog_counter = 30
-            dialog_position = (300, 200)
-
-        if hero_rect.colliderect(sword_rect) and "sword" not in inventory:
-            inventory["sword"] = True
-            dialog = "Sword added to inventory"
+        if player_rect.colliderect(spear_rect):
+            inventory["spear"] = True
+            dialog = "Use your spear to kill the boar"
             dialog_counter = 30
             dialog_position = (300, 200)
             
