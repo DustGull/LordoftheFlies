@@ -207,7 +207,7 @@ def main():
             if "glasses" not in inventory and "rock" not in inventory:
                 dialog = "Get Piggy's glasses!"
             elif "rock" in inventory:
-                dialog = "Rocks can't kill me"
+                dialog = "Use the rock to kill Piggy!"
         
         #check for touching rock 
         if player_rect.colliderect(rock_rect) and "rock" not in inventory:
