@@ -159,7 +159,7 @@ def main():
             dialog_position = (300, 200)
             
          # Check for touching Simon 
-         if hero_rect.colliderect(simon_rect):
+         if player_rect.colliderect(simon_rect):
             # Respond differently depending on torch status
             if "torch" in inventory:
                 dialog = "You killed me!"
@@ -169,13 +169,31 @@ def main():
                 dialog = "Find a torch or sleepingbag"
          
          #Check for touching Torch
-         if hero_rect.colliderect(torch_rect) and "torch" not in inventory:
+         if player_rect.colliderect(torch_rect) and "torch" not in inventory:
             inventory["torch"] = True
             dialog = "torch added to inventory"
             dialog_counter = 30
             dialog_position = (300, 200)
             
-        #CHeck for touching Piggy 
+        #CHeck for touching Piggy
+        if player_rect.colliderect(piggy_rect):
+        # Respond differently depending on glasses status
+        if "glasses" in inventory:
+            dialog = "I can see again!"
+            #pig_has_glasses = True 
+                         
+            elif "rock" in inventory: # jack_has_glasses 
+                dialog = "Don't kill me "
+                             
+            elif "glasses" not in inventory and "rock" not in inventory:
+                dialog = "Have you seen my glasses? "
+         
+         #Check for touching glasses
+         if player_rect.colliderect(glasses_rect) and "glasses" not in inventory:
+            inventory["glasses"] = True
+            dialog = "Give the glasses to Piggy or Jack"
+            dialog_counter = 30
+            dialog_position = (300, 200)                    
         
         #Check for touching Sleeping bag 
         
