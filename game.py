@@ -162,6 +162,20 @@ def main():
             dialog = "Sword added to inventory"
             dialog_counter = 30
             dialog_position = (300, 200)
+            
+         # Check for touching Simon 
+         
+         #Check for touching Sleeping bag & Torch
+        
+        #CHeck for touching Piggy 
+        
+        #Check for touching Sleeping bag 
+        
+        # Check for touching 
+        
+        #Check for touching Jack
+        
+        #check for touching rock 
 
         # Draw the characters
         screen.blit(ghost, ghost_rect)
