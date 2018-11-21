@@ -24,12 +24,6 @@ def main():
     player = load_piskell_sprite("player",21) #Load player sprite
     player_rect = player[0].get_rect()
     player_rect.center = (350,250) #location
-    
-    #Create boar 
-    
-    boar = pygame.image.load("boar.png").convert_alpha() 
-    boar_rect = boar.rect()
-    boar_rect.center = 200, 150 
 
     # adding characters
     #Simon
@@ -142,30 +136,54 @@ def main():
             rect.move_ip(movement_x, movement_y)
 
         # Check for touching boar.
-        if player_rect.colliderect(boar_rect):
-            # Respond differently depending on spear status
-            if "spear" in inventory:
-                dialog = "Oh no !! you killed me!!"
+        if hero_rect.colliderect(ghost_rect):
+            # Respond differently depending on gold status
+            if "gold" in inventory and "sword" in inventory:
+                dialog = "GO Manny!"
+            elif "gold" in inventory:
+                dialog = "Welcome rich friend!"
+            elif "sword" in inventory:
+                dialog = "Oh no. don't hurt me!"
             else:
-                dialog = "I'm going to kill you!"
+                dialog = "Go away loser!"
             # These say where and for how long the dialog prints on the screen
             dialog_counter = 50
             dialog_position = (100, 100)
 
         # Check for touching spear .
-        if player_rect.colliderect(spear_rect):
-            inventory["spear"] = True
-            dialog = "Use your spear to kill the boar"
+        if hero_rect.colliderect(treasure_rect) and "gold" not in inventory:
+            inventory["gold"] = True
+            dialog = "Gold added to inventory"
+            dialog_counter = 30
+            dialog_position = (300, 200)
+
+        if hero_rect.colliderect(sword_rect) and "sword" not in inventory:
+            inventory["sword"] = True
+            dialog = "Sword added to inventory"
             dialog_counter = 30
             dialog_position = (300, 200)
             
          # Check for touching Simon 
+         if hero_rect.colliderect(simon_rect):
+            # Respond differently depending on torch status
+            if "torch" in inventory:
+                dialog = "You killed me!"
+            elif "sleepingbag" in inventory:
+                dialog = "I died while you slept"
+            elif "torch" not in inventory and "sleepingbag" not in inventory:
+                dialog = "Find a torch or sleepingbag"
          
          #Check for touching Torch
-        
+         if hero_rect.colliderect(torch_rect) and "torch" not in inventory:
+            inventory["torch"] = True
+            dialog = "torch added to inventory"
+            dialog_counter = 30
+            dialog_position = (300, 200)
+            
         #CHeck for touching Piggy 
         
         #Check for touching Sleeping bag 
+        
         
         #Check for touching Jack
         
