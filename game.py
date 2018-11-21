@@ -60,7 +60,7 @@ def main():
 
     # adding inventory items
 
-    spear = pygame.image.load("spear.png").convert_alpha()
+    spear = pygame.image.load("Spear.png").convert_alpha()
     spear_rect = spear.get_rect()
     spear_rect.center = 750,400
 
@@ -77,7 +77,7 @@ def main():
     glasses_rect = glasses.get_rect()
     glasses_rect.center = 150, 300
 
-    bag = pygame.image.load("sleeping_bag.png").convert_alpha()
+    bag = pygame.image.load("bag.png").convert_alpha()
     bag_rect = bag.get_rect()
     bag_rect.center = 400, 300
 
