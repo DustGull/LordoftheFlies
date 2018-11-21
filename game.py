@@ -21,29 +21,29 @@ def main():
     screen = pygame.display.set_mode(screen_size)
 
     # create player
-    player = load_piskell_sprite("player",21) #Load player sprite
-    player_rect = player[0].get_rect()
+    player = pygame.image.load("Player.png").convert_alpha() #load player image
+    player_rect = player.get_rect()
     player_rect.center = (350,250) #location
 
     # adding characters
     #Simon
-    simon = pygame.image.load("simon.png").convert_alpha() #load simon image
+    simon = pygame.image.load("Simon.png").convert_alpha() #load simon image
     simon_rect = simon.get_rect()
     simon_rect.center = 100, 200
     
     #boar
-    boar = pygame.image.load("boar.png).convert_alpha()
+    boar = pygame.image.load("Boar.png).convert_alpha()
     boar_rect = boar.get_rect()
     boar_rect.center = 200, 200                         
 
     #Piggy
-    piggy = pygame.image.load("piggy,png").convert_alpha() #load piggy's image
+    piggy = pygame.image.load("Piggy,png").convert_alpha() #load piggy's image
     piggy_rect = piggy.get()
     piggy_rect.center = (150, 200)
 
     #Jack is the kid who becomes wild and barbaric
 
-    jack = pygame.image.load("jack.png").convert_alpha() #loan Jack's image
+    jack = pygame.image.load("Chior Boy.png").convert_alpha() #loan Jack's image
     jack_rect = jack.get()
     jack_rect.center = (180, 180)
 
