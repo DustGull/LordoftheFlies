@@ -99,7 +99,7 @@ def main():
     inventory = {}
 
     # This list should hold all the sprite rectangles that get shifted with a key press.
-    rect_list = [ghost_rect, treasure_rect, sword_rect]
+    rect_list = [spear_rect, rock_rect, torch_rect, bag_rect]
 
     # Loop while the player is still active
     while playing:
