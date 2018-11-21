@@ -241,12 +241,12 @@ def main():
             screen.blit(sword, sword_rect)
 
         # Pick the sprite frame to draw
-        hero_sprite = hero[frame_count%len(hero)]
+        player_sprite = player[frame_count%len(player)]
         # Flip the sprite depending on direction
         if not is_facing_left:
-            hero_sprite = pygame.transform.flip(hero_sprite, True, False)
-        screen.blit(hero_sprite, hero_rect)
-        pygame.draw.rect(screen, (0,255,0), hero_rect, 3)
+            player_sprite = pygame.transform.flip(player_sprite, True, False)
+        screen.blit(player_sprite, player_rect)
+        pygame.draw.rect(screen, (0,255,0), player_rect, 3)
 
         # draw any dialog
         if dialog:
