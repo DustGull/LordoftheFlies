@@ -196,12 +196,26 @@ def main():
             dialog_position = (300, 200)                    
         
         #Check for touching Sleeping bag 
-        
+        if player_rect.colliderect(bag_rect) and "bag" not in inventory:
+            inventory["bag"] = True
+            dialog = "sleepingbag added to inventory"
+            dialog_counter = 30
+            dialog_position = (300, 200)
         
         #Check for touching Jack
+        if player_rect.colliderect(jack_rect):
+            if "glasses" not in inventory and "rock" not in inventory:
+                dialog = "Get Piggy's glasses!"
+            elif "rock" in inventory:
+                dialog = "Rocks can't kill me"
         
         #check for touching rock 
-
+        if player_rect.colliderect(rock_rect) and "rock" not in inventory:
+                    inventory["rock"] = True
+                    dialog = "rock added to inventory"
+                    dialog_counter = 30
+                    dialog_position = (300, 200)
+                             
         # Draw the characters
         screen.blit(ghost, ghost_rect)
         pygame.draw.rect(screen, (0,255,0), ghost_rect, 3)
