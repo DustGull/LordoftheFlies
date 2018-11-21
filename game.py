@@ -135,7 +135,7 @@ def main():
         for rect in rect_list:
             rect.move_ip(movement_x, movement_y)
 
-        # Check for touching ghost.
+        # Check for touching boar.
         if hero_rect.colliderect(ghost_rect):
             # Respond differently depending on gold status
             if "gold" in inventory and "sword" in inventory:
@@ -150,7 +150,7 @@ def main():
             dialog_counter = 50
             dialog_position = (100, 100)
 
-        # Check for touching the gold chest.
+        # Check for touching spear .
         if hero_rect.colliderect(treasure_rect) and "gold" not in inventory:
             inventory["gold"] = True
             dialog = "Gold added to inventory"
