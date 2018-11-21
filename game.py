@@ -165,7 +165,7 @@ def main():
             
          # Check for touching Simon 
          
-         #Check for touching Sleeping bag & Torch
+         #Check for touching Torch
         
         #CHeck for touching Piggy 
         
