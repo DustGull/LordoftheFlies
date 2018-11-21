@@ -212,7 +212,7 @@ def main():
         #check for touching rock 
         if player_rect.colliderect(rock_rect) and "rock" not in inventory:
                     inventory["rock"] = True
-                    dialog = "rock added to inventory"
+                    dialog ="Better not drop this, someone could get hurt!"
                     dialog_counter = 30
                     dialog_position = (300, 200)
                              
