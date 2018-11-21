@@ -30,6 +30,11 @@ def main():
     simon = pygame.image.load("simon.png").convert_alpha() #load simon image
     simon_rect = simon.get_rect()
     simon_rect.center = 100, 200
+    
+    #boar
+    boar = pygame.image.load("boar.png).convert_alpha()
+    boar_rect = boar.get_rect()
+    boar_rect.center = 200, 200                         
 
     #Piggy
     piggy = pygame.image.load("piggy,png").convert_alpha() #load piggy's image
@@ -136,30 +141,20 @@ def main():
             rect.move_ip(movement_x, movement_y)
 
         # Check for touching boar.
-        if hero_rect.colliderect(ghost_rect):
-            # Respond differently depending on gold status
-            if "gold" in inventory and "sword" in inventory:
-                dialog = "GO Manny!"
-            elif "gold" in inventory:
-                dialog = "Welcome rich friend!"
-            elif "sword" in inventory:
-                dialog = "Oh no. don't hurt me!"
+        if player_rect.colliderect(boar_rect):
+            # Respond differently depending on spear status
+            if "spear" in inventory:
+                dialog = "Oh no !! you killed me!!"
             else:
-                dialog = "Go away loser!"
+                dialog = "I am going to kill you!!"
             # These say where and for how long the dialog prints on the screen
             dialog_counter = 50
             dialog_position = (100, 100)
 
         # Check for touching spear .
-        if hero_rect.colliderect(treasure_rect) and "gold" not in inventory:
-            inventory["gold"] = True
-            dialog = "Gold added to inventory"
-            dialog_counter = 30
-            dialog_position = (300, 200)
-
-        if hero_rect.colliderect(sword_rect) and "sword" not in inventory:
-            inventory["sword"] = True
-            dialog = "Sword added to inventory"
+        if player_rect.colliderect(spear_rect) and "spear" not in inventory:
+            inventory["spear"] = True
+            dialog = "Use the spear to kill the boar"
             dialog_counter = 30
             dialog_position = (300, 200)
             
