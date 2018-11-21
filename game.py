@@ -171,8 +171,6 @@ def main():
         
         #Check for touching Sleeping bag 
         
-        # Check for touching 
-        
         #Check for touching Jack
         
         #check for touching rock 
