@@ -27,7 +27,7 @@ def main():
     
     #Create boar 
     
-    boar = pygame.image.load("boar.png")
+    boar = pygame.image.load("boar.png").convert_alpha() 
     boar_rect = boar.rect()
     boar_rect.center = 200, 150 
 
