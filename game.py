@@ -216,10 +216,23 @@ def main():
                     dialog_counter = 30
                     dialog_position = (300, 200)
                              
-        # Draw the characters
-        screen.blit(ghost, ghost_rect)
-        pygame.draw.rect(screen, (0,255,0), ghost_rect, 3)
-
+        # Draw boar
+        screen.blit(boar, boar_rect)
+        pygame.draw.rect(screen, (0,255,0), boar_rect, 3)
+        
+        # Draw Simon
+        screen.blit(simon, simon_rect)                     
+        pygame.draw.rect(screen, (0, 60, 0), simon_rect, 3) 
+                             
+        #Draw Piggy                      
+        screen.blit(piggy, piggy_rect)
+        pygame.draw.rect(screen, (0, 60, 0) piggy_rect, 3)
+                             
+        #Draw Jack
+        screen.blit(jack, jack_rect)
+        pygame.draw.rect(screen, (0, 60, 0) jack_rect, 3)                     
+                             
+                             
         # Only draw the gold if it hasn't been picked up
         if "gold" not in inventory:
             screen.blit(treasure, treasure_rect)
