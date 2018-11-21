@@ -24,6 +24,12 @@ def main():
     player = load_piskell_sprite("player",21) #Load player sprite
     player_rect = player[0].get_rect()
     player_rect.center = (350,250) #location
+    
+    #Create boar 
+    
+    boar = pygame.image.load("boar.png")
+    boar_rect = boar.rect()
+    boar_rect.center = 200, 150 
 
     # adding characters
     #Simon
@@ -136,7 +142,7 @@ def main():
             rect.move_ip(movement_x, movement_y)
 
         # Check for touching boar.
-        if hero_rect.colliderect(ghost_rect):
+        if player_rect.colliderect(boar_rect):
             # Respond differently depending on gold status
             if "gold" in inventory and "sword" in inventory:
                 dialog = "GO Manny!"
