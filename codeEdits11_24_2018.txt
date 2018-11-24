@@ -1,0 +1,16 @@
+changed Piggy's dialog code so it puts the 
+if "glasses not and rock not" statement first
+
+changed Simon's dialog so he says to search
+and then says he has died after you have one
+of those items
+
+changed positions of character's and items to
+be spaced better and near items that cause 
+dialog
+
+changed font to Courier New, size 20 (from 30)
+
+Other characters don't "move" along with 
+player (line 108, added the rects of characters)
+
