@@ -1,0 +1,9 @@
+redundant code line 196(about) that was causing the objects
+to move in positive direction, then back in negative 
+direction
+
+changed the screen size, 42, to 500,500
+
+changed rect_list to include all of the characters/items
+
+rearranged the characters because minimap was covering them
