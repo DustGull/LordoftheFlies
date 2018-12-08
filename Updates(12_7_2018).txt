@@ -7,3 +7,7 @@ changed the screen size, 42, to 500,500
 changed rect_list to include all of the characters/items
 
 rearranged the characters because minimap was covering them
+
+Changed the code that references the tile images.
+you'll have to move the new images into the maps
+folder.
